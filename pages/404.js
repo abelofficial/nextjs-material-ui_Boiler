@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import clx from 'classnames';
 import { Button, Grid, makeStyles, Paper, Typography } from '@material-ui/core';
 import { NextSeo } from 'next-seo';
@@ -48,6 +49,7 @@ export default function NotFound() {
               color="primary"
               variant="outlined"
               className={clx(classes.rounded_button, classes.button)}
+              onClick={() => router.push('/')}
             >
               home
             </Button>

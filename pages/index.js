@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import clx from 'classnames';
 import {
   Button,
@@ -50,7 +49,7 @@ export default function Home() {
           </Grid>
           <Grid item>
             <Typography className={clx(classes.text_padding__small)}>
-              This is a boiler plate for Nextjs-with-material-ui.
+              This is a boilerplate for Nextjs-with-material-ui.
             </Typography>
             <Button
               color="primary"

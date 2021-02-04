@@ -37,7 +37,12 @@ export default function Error() {
           spacing={2}
         >
           <Grid item>
-            <Typography variant="h1" className={clx(classes.text_padding__small)>Something went wrong</Typography>
+            <Typography
+              variant="h1"
+              className={clx(classes.text_padding__small)}
+            >
+              Something went wrong
+            </Typography>
           </Grid>
           <Grid item>
             <Typography>Page could not be loaded</Typography>
