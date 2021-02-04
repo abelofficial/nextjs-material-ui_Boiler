@@ -1,6 +1,6 @@
-# nextjs-material-ui_Boiler
+# nextjs-material-ui_boilerplate
 
-This is an SEO friendly NEXT.js bolierplate that uses Material-Ui.
+This is an SEO friendly NEXT.js boilerplate that uses Material-Ui.
 
 ## Dependencies
 
