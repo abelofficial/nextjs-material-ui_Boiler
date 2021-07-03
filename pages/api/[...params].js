@@ -3,7 +3,7 @@ import nc from 'next-connect';
 
 const onError = (err, req, res, next) => {
   console.log(err);
-  res.status(500).json({ error: err });
+  res.status(500).json({ error: 'An internal error occurred ' });
 };
 
 const onNoMatch = (req, res, next) => {
@@ -11,16 +11,34 @@ const onNoMatch = (req, res, next) => {
 };
 const handler = nc({ onNoMatch, onError })
   .use(cors())
+
   .get(async (req, res) => {
-    const [...queries] = req.query.params;
-    try {
-      res.status(200).json({
-        message: 'Api call Not available',
-        quires: queries
-      });
-    } catch (error) {
-      res.status(401).json({ error });
-    }
+    res.status(401).json({
+      message: 'Api calls are not available'
+    });
+  })
+
+  .post(async (req, res) => {
+    res.status(401).json({
+      message: 'Api calls are not available'
+    });
+  })
+
+  .put(async (req, res) => {
+    res.status(401).json({
+      message: 'Api calls are not available'
+    });
+  })
+
+  .delete(async (req, res) => {
+    res.status(401).json({
+      message: 'Api calls are not available'
+    });
+  })
+  .patch(async (req, res) => {
+    res.status(401).json({
+      message: 'Api calls are not available'
+    });
   });
 
 export default handler;

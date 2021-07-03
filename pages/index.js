@@ -1,26 +1,13 @@
-import clx from 'classnames';
-import {
-  Button,
-  Grid,
-  Link,
-  makeStyles,
-  Paper,
-  Typography
-} from '@material-ui/core';
+// Core
+import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
-import main from '@styles/main';
-
-const useStyle = makeStyles(() => ({}));
+// Material
+import { Grid, Link, Container, Typography, Box } from '@material-ui/core';
 
 export default function Home() {
-  const classes = main();
-
-  const fastforwardCookie = 'nextjs-material-ui-admin'; //
-  const fastforwardPage = '/dashboard';
-
   return (
-    <div>
+    <Container maxWidth="md" component={Box}>
       <NextSeo
         title="Nextjs With Material Ui"
         canonical="http://localhost/3000"
@@ -29,40 +16,40 @@ export default function Home() {
           url: 'http://localhost/3000'
         }}
       />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `if (document.cookie && document.cookie.includes('${fastforwardCookie}')) {
-          window.location.href = "${fastforwardPage}"
-        }`
-        }}
-      />
-
-      <Paper className={clx(classes.page)}>
+      <Box minHeight="100vh" display="flex" alignItems="center">
         <Grid
           container
+          alignContent="center"
+          justify="center"
           direction="column"
-          className={clx(classes.container)}
-          spacing={2}
+          component={Box}
+          p={4}
+          boxShadow={4}
+          width="100%"
         >
           <Grid item>
             <Typography variant="h1"> Nextjs with Material-Ui </Typography>
           </Grid>
-          <Grid item>
-            <Typography className={clx(classes.text_padding__small)}>
-              This is a boilerplate for Nextjs-with-material-ui.
+          <Grid item component={Box} pt={4}>
+            <Typography>
+              This is a boilerplate for{' '}
+              <Link href="https://nextjs.org/">Nextjs</Link> with{' '}
+              <Link href="https://material-ui.com/">Material-UI.</Link>
             </Typography>
-            <Button
-              color="primary"
-              variant="outlined"
-              className={clx(classes.rounded_button, classes.button)}
-            >
-              <Link href="https://github.com/abelofficial/nextjs-material-ui_Boiler">
-                See Heres
-              </Link>
-            </Button>
+            <Link href="https://github.com/abelofficial/Nextjs-Material-ui-boilerplate">
+              <em>See Heres</em>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Image
+              alt="Material ui with Next"
+              src="/material-vs-next.svg"
+              width={400}
+              height={400}
+            />
           </Grid>
         </Grid>
-      </Paper>
-    </div>
+      </Box>
+    </Container>
   );
 }
